@@ -1,3 +1,4 @@
+import 'package:Food_Delivery_App/screens/pages/HomePage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:Food_Delivery_App/repository/repository.dart';
@@ -14,7 +15,7 @@ class HomeScreen extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemBuilder: (_, index) {
           return Container(
-            color: Colors.white,
+            color: Colors.pink[100],
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
             child: Column(
               children: [
@@ -63,6 +64,27 @@ class HomeScreen extends StatelessWidget {
                                     repeat: false,
                                   ),
                                 ),
+                                InkWell(
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (_) => HomePage()));
+                                  },
+                                  child: Container(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20, vertical: 10),
+                                    decoration: BoxDecoration(
+                                        color: Colors.red,
+                                        borderRadius:
+                                            BorderRadius.circular(15)),
+                                    child: Text(
+                                      'Get Started',
+                                      style: TextStyle(
+                                          fontSize: 18, color: Colors.white),
+                                    ),
+                                  ),
+                                )
                               ],
                             ),
                           ),
